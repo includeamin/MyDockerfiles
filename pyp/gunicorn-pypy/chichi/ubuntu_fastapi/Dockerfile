@@ -1,8 +1,9 @@
 FROM pypy:3.6
 
 
-# RUN apt-get update -y && \
-#   apt-get install -y python3 python3-dev python3-pip
+RUN apt-get update -y 
+#&& \
+#    apt-get install -y python3 python3-dev python3-pip
 
 
 RUN apt-get install -y sudo curl wget locales
@@ -21,10 +22,11 @@ COPY . ./app
 WORKDIR app
 
 
-RUN pip  install -r requirements.txt
-RUN pip install uvicorn
-RUN pip install fastapi
-RUN pip install fastapi[all]
-RUN pip install email-validator
-RUN pip install pymongo
-RUN pip install gunicorn
+RUN pip3  install -r requirements.txt
+RUN pip3 install uvicorn
+RUN pip3 install fastapi
+RUN pip3 install fastapi[all]
+RUN pip3 install email-validator
+RUN pip3 install pymongo
+RUN pip3 install gunicorn
+
