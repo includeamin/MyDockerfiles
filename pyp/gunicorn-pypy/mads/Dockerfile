@@ -7,8 +7,7 @@ COPY ./requirements.txt ./app/requirements.txt
 
 COPY . ./app
 
-RUN ls
-RUN cd /app/Configures && ls
+
 
 WORKDIR /app
 
