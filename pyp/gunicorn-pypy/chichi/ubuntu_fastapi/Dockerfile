@@ -1,9 +1,7 @@
-FROM pypy:3.6
+FROM ubuntu:18.04
 
-
-RUN apt-get update -y 
-#&& \
-#    apt-get install -y python3 python3-dev python3-pip
+RUN apt-get update -y && \
+   apt-get install -y python3 python3-dev python3-pip
 
 
 RUN apt-get install -y sudo curl wget locales
