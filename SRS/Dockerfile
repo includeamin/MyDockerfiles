@@ -1,0 +1,21 @@
+FROM ubuntu:18.04
+
+WORKDIR app
+RUN apt update -y
+RUN apt install -y git
+RUN apt-get install -y --force-yes gcc
+RUN git clone https://github.com/ossrs/srs -b 4.0release
+RUN apt-get install -y --force-yes g++
+RUN apt-get install -y --force-yes make
+RUN apt-get install -y --force-yes unzip
+RUN apt-get install -y --force-yes pkg-config
+RUN apt install -y python
+RUN cd srs/trunk && ./configure && make
+EXPOSE 8000
+EXPOSE 1935
+EXPOSE 8080
+EXPOSE 1985
+EXPOSE 8544
+WORKDIR srs/trunk
+
+CMD ./objs/srs -c conf/rtc.conf
