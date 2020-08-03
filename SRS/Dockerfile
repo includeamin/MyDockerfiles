@@ -17,5 +17,8 @@ EXPOSE 8080
 EXPOSE 1985
 EXPOSE 8544
 WORKDIR srs/trunk
+ADD rtc_flv.conf rtc_flv.conf
 
-CMD ./objs/srs -c conf/rtc.conf
+CMD ./objs/srs -c rtc_flv.conf
+ 
+#conf/rtc.conf
